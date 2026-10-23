@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Memory Game – Animals – 16</title>
 
 <style>
@@ -103,6 +104,66 @@ h1 {
     min-height: 90px;
     margin: 25px auto 0;
 }
+ /* Zobrazenie na mobile */
+@media (max-width: 600px) {
+
+    body {
+        box-sizing: border-box;
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding: 16px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    #stats {
+        font-size: 17px;
+    }
+
+    #best {
+        font-size: 15px;
+    }
+
+    #game {
+        width: 100%;
+        max-width: 400px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 20px;
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        box-sizing: border-box;
+        border-radius: 12px;
+        font-size: clamp(28px, 10vw, 52px);
+    }
+
+    .card::before {
+        top: 10px;
+        font-size: clamp(7px, 2vw, 10px);
+    }
+
+    #message {
+        font-size: 18px;
+    }
+
+    #adSpace {
+        width: 100%;
+        max-width: 400px;
+        min-height: 90px;
+        margin-top: auto;
+        padding-top: 25px;
+        box-sizing: border-box;
+    }
+}
 </style>
 </head>
 
@@ -113,7 +174,7 @@ h1 {
 <button id="newGame">New Game</button>
 
 <div id="stats">
-    Attempts: 0 &nbsp;&nbsp;&nbsp; Čas: 0:00
+    Attempts: 0 &nbsp;&nbsp;&nbsp; Time: 0:00
 </div>
 
 <div id="best">
